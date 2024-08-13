@@ -24,8 +24,7 @@ public class WebSecurityFilterChain {
 	        http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
 	        http.authorizeRequests().requestMatchers("/api/**").permitAll()
-	                .requestMatchers(HttpMethod.GET, "/api/posts").permitAll()
-	                .requestMatchers(HttpMethod.GET, "/api/post/{id}").permitAll()
+	                .requestMatchers(HttpMethod.GET, "/**").permitAll()
 	                .anyRequest().authenticated();
 
 
