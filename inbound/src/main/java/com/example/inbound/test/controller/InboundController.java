@@ -40,6 +40,21 @@ public class InboundController {
 		
 			return ResponseEntity.ok(userVO);
 	}
+	
+	@PostMapping("/test/post/insert")
+	public ResponseEntity<?> TestPostInsert(@RequestBody UserVO userVO) {
+			
+				int result = 0;
+		
+			try {
+				result = userService.insertUser(userVO);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
+			return ResponseEntity.ok(result);
+	}
 
 
 }

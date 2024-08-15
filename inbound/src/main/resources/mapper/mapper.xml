@@ -5,5 +5,11 @@
     <select id="selectUser" resultType="com.example.inbound.model.UserVO">
 		select * from test_table
     </select>
+    
+    <insert id="insertUser" parameterType="com.example.inbound.model.UserVO">
+		insert into test_table(
+			id, password
+		) values(#{user_id}, #{password})
+    </insert>
 
 </mapper>

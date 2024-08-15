@@ -20,4 +20,10 @@ public class UserService {
 		List<UserVO> vos = mappers.selectUser();
 		return vos;
 	}
+	
+	public int insertUser(UserVO userVO) throws Exception {
+		TestMapper mappers = sqlSession.getMapper(TestMapper.class);
+		
+		return	mappers.insertUser(userVO); 
+	}
 }
